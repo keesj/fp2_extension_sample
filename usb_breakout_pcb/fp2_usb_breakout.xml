@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>/home/keesj/projects/fairphone/connector/fp2_usb_breakout.sch</source>
+    <date>Wed 02 Sep 2015 19:05:45 CEST</date>
+    <tool>Eeschema 0.201508300901+6132~28~ubuntu15.04.1-product</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>fp2_usb_breakout.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="P2">
+      <value>USB_A</value>
+      <libsource lib="conn" part="USB_A"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>55E6CAE4</tstamp>
+    </comp>
+    <comp ref="P1">
+      <value>FP2-MODULE_5-CONNECTOR</value>
+      <libsource lib="fairphone_fp2" part="FP2-MODULE_5-CONNECTOR"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>55E6CD6D</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="fairphone_fp2" part="FP2-MODULE_5-CONNECTOR">
+      <description>Fairphone FP2 connector</description>
+      <footprints>
+        <fp>fairphone</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">FP2-MODULE_5-CONNECTOR</field>
+      </fields>
+      <pins>
+        <pin num="1" name="USB_VBUS" type="output"/>
+        <pin num="2" name="USB_DP" type="BiDi"/>
+        <pin num="3" name="USB_DM" type="BiDi"/>
+        <pin num="4" name="GND" type="output"/>
+        <pin num="5" name="VIN" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="conn" part="USB_A">
+      <description>A connector</description>
+      <footprints>
+        <fp>USB*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">USB_A</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VCC" type="power_in"/>
+        <pin num="2" name="D-" type="passive"/>
+        <pin num="3" name="D+" type="passive"/>
+        <pin num="4" name="GND" type="power_in"/>
+        <pin num="5" name="shield" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="conn">
+      <uri>/usr/share/kicad/library/conn.lib</uri>
+    </library>
+    <library logical="fairphone_fp2">
+      <uri>/home/keesj/projects/fairphone/connector/fairphone_fp2.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="GND">
+      <node ref="P2" pin="4"/>
+      <node ref="P2" pin="5"/>
+      <node ref="P1" pin="4"/>
+    </net>
+    <net code="2" name="Net-(P1-Pad3)">
+      <node ref="P2" pin="2"/>
+      <node ref="P1" pin="3"/>
+    </net>
+    <net code="3" name="Net-(P1-Pad2)">
+      <node ref="P1" pin="2"/>
+      <node ref="P2" pin="3"/>
+    </net>
+    <net code="4" name="Net-(P1-Pad1)">
+      <node ref="P2" pin="1"/>
+      <node ref="P1" pin="1"/>
+    </net>
+    <net code="5" name="Net-(P1-Pad5)">
+      <node ref="P1" pin="5"/>
+    </net>
+  </nets>
+</export>
